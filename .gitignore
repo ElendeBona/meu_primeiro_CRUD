@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+.claude/
+
+backend/load_csv.py
+backend/README.md
