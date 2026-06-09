@@ -4,7 +4,10 @@ from pathlib import Path
 import requests
 import streamlit as st
 
-API_URL = os.getenv("API_URL", "http://localhost:8000")
+try:
+    API_URL = st.secrets["API_URL"]
+except Exception:
+    API_URL = os.getenv("API_URL", "http://localhost:8000")
 ASSETS = Path(__file__).resolve().parent.parent / "assets"
 
 st.set_page_config(page_title="School Advisor", page_icon="🎓", layout="wide")
